@@ -1,3 +1,8 @@
+* Original code from
+http://tinyscheme.sourceforge.net/
+Dimitrios Soulfis, Kevin Cozens and Jonathan S. Shapiro. Good work guys. 
+This is just an attempt to learn from what you've created, maybe do some fun things with it myself.
+
 * Call/cc failed..
 added call/cc modified code (http://sourceforge.net/p/tinyscheme/bugs/31/)
 
