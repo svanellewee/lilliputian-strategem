@@ -2614,7 +2614,8 @@ static pointer opexe_0(scheme *sc, enum scheme_opcodes op) {
                sc->args = sc->NIL;
                s_goto(sc,OP_EVAL);
           } else {  /* end */
-               sc->args = reverse_in_place(sc, sc->NIL, sc->args);
+               //sc->args = reverse_in_place(sc, sc->NIL, sc->args);
+               sc->args = reverse(sc,  sc->args);
                sc->code = car(sc->args);
                sc->args = cdr(sc->args);
                s_goto(sc,OP_APPLY);
@@ -2819,7 +2820,8 @@ static pointer opexe_0(scheme *sc, enum scheme_opcodes op) {
                sc->args = sc->NIL;
                s_goto(sc,OP_EVAL);
           } else {  /* end */
-               sc->args = reverse_in_place(sc, sc->NIL, sc->args);
+               // sc->args = reverse_in_place(sc, sc->NIL, sc->args);
+               sc->args = reverse(sc,  sc->args);
                sc->code = car(sc->args);
                sc->args = cdr(sc->args);
                s_goto(sc,OP_LET2);
@@ -2909,7 +2911,8 @@ static pointer opexe_1(scheme *sc, enum scheme_opcodes op) {
                sc->args = sc->NIL;
                s_goto(sc,OP_EVAL);
           } else {  /* end */
-               sc->args = reverse_in_place(sc, sc->NIL, sc->args);
+               //sc->args = reverse_in_place(sc, sc->NIL, sc->args);
+               sc->args = reverse(sc,  sc->args);
                sc->code = car(sc->args);
                sc->args = cdr(sc->args);
                s_goto(sc,OP_LET2REC);
