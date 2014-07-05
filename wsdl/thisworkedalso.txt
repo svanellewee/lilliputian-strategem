@@ -267,3 +267,110 @@ stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ ls
 bla       runsdl.scm  SDL-1.2.15.tar.gz  test.c          tst     wsdl.h
 Makefile  SDL-1.2.15  sdl.c              thisworked.txt  wsdl.c  wsdl.so
 stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ 
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ 
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ rm wsdl.
+rm: cannot remove `wsdl.': No such file or directory
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ rm wsdl.so 
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ gcc -shared -Wall -fPIC wsdl.c wsdl.h $(~/sdl1.2/bin/sdl-config --cflags --static-libs) -I.. -DUSE_DL=1 -o wsdl.so
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ gcc -shared -Wall -fPIC wsdl.c wsdl.h $(~/sdl1.2/bin/sdl-config --cflags --static-libs) -I.. -DUSE_DL=1 -o wsdl.so
+wsdl.c:25:15: warning: ‘getpixel’ defined but not used [-Wunused-function]
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ rm wsdl.
+rm: cannot remove `wsdl.': No such file or directory
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ rm wsdl.so 
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ rm wsdl.so 
+rm: cannot remove `wsdl.so': No such file or directory
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ gcc -shared -Wall -fPIC wsdl.c wsdl.h $(~/sdl1.2/bin/sdl-config --cflags --static-libs) -I.. -DUSE_DL=1 -o wsdl.so
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ gcc -shared -Wall -fPIC wsdl.c wsdl.h $(~/sdl1.2/bin/sdl-config --cflags --static-libs) -I.. -DUSE_DL=1 -o wsdl.so
+wsdl.c: In function ‘foreign_pixel’:
+wsdl.c:88:3: error: too few arguments to function ‘putpixel’
+wsdl.c:53:6: note: declared here
+wsdl.c: At top level:
+wsdl.c:25:15: warning: ‘getpixel’ defined but not used [-Wunused-function]
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ gcc -shared -Wall -fPIC wsdl.c wsdl.h $(~/sdl1.2/bin/sdl-config --cflags --static-libs) -I.. -DUSE_DL=1 -o wsdl.so
+wsdl.c:25:15: warning: ‘getpixel’ defined but not used [-Wunused-function]
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ rm wsdl.
+rm: cannot remove `wsdl.': No such file or directorys
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ rm wsdl.so 
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ gcc -shared -Wall -fPIC wsdl.c wsdl.h $(~/sdl1.2/bin/sdl-config --cflags --static-libs) -I.. -DUSE_DL=1 -o wsdl.so
+wsdl.c:25:15: warning: ‘getpixel’ defined but not used [-Wunused-function]
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ rm wsdl.so 
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ gcc -shared -Wall -fPIC wsdl.c wsdl.h $(~/sdl1.2/bin/sdl-config --cflags --static-libs) -I.. -DUSE_DL=1 -o wsdl.so
+wsdl.c:25:15: warning: ‘getpixel’ defined but not used [-Wunused-function]
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ gcc -shared -Wall -fPIC wsdl.c wsdl.h $(~/sdl1.2/bin/sdl-config --cflags --static-libs) -I.. -DUSE_DL=1 -o wsdl.so
+wsdl.c:25:15: warning: ‘getpixel’ defined but not used [-Wunused-function]
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ rm wsdl.so 
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ gcc -shared -Wall -fPIC wsdl.c wsdl.h $(~/sdl1.2/bin/sdl-config --cflags --static-libs) -I.. -DUSE_DL=1 -o wsdl.so
+wsdl.c:25:15: warning: ‘getpixel’ defined but not used [-Wunused-function]
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdlgcc -shared -Wall -fPIC wsdl.c wsdl.h $(~/sdl1.2/bin/sdl-config --cflags --static-libs) -I.. -DUSE_DL=1 -o wsdl.so
+wsdl.c: In function ‘foreign_putpixel’:
+wsdl.c:94:3: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘first_arg’
+wsdl.c:105:3: error: ‘yval’ undeclared (first use in this function)
+wsdl.c:105:3: note: each undeclared identifier is reported only once for each function it appears in
+wsdl.c:111:3: error: ‘colour’ undeclared (first use in this function)
+wsdl.c:114:3: error: ‘yellow’ undeclared (first use in this function)
+wsdl.c: At top level:
+wsdl.c:25:15: warning: ‘getpixel’ defined but not used [-Wunused-function]
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ gcc -shared -Wall -fPIC wsdl.c wsdl.h $(~/sdl1.2/bin/sdl-config --cflags --static-libs) -I.. -DUSE_DL=1 -o wsdl.so
+wsdl.c: In function ‘foreign_putpixel’:
+wsdl.c:94:3: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘first_arg’
+wsdl.c:105:3: error: ‘yval’ undeclared (first use in this function)
+wsdl.c:105:3: note: each undeclared identifier is reported only once for each function it appears in
+wsdl.c:111:3: error: ‘colour’ undeclared (first use in this function)
+wsdl.c: At top level:
+wsdl.c:25:15: warning: ‘getpixel’ defined but not used [-Wunused-function]
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ gcc -shared -Wall -fPIC wsdl.c wsdl.h $(~/sdl1.2/bin/sdl-config --cflags --static-libs) -I.. -DUSE_DL=1 -o wsdl.so
+wsdl.c: In function ‘foreign_putpixel’:
+wsdl.c:112:3: error: ‘colour’ undeclared (first use in this function)
+wsdl.c:112:3: note: each undeclared identifier is reported only once for each function it appears in
+wsdl.c: At top level:
+wsdl.c:25:15: warning: ‘getpixel’ defined but not used [-Wunused-function]
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ gcc -shared -Wall -fPIC wsdl.c wsdl.h $(~/sdl1.2/bin/sdl-config --cflags --static-libs) -I.. -DUSE_DL=1 -o wsdl.so
+wsdl.c: In function ‘foreign_putpixel’:
+wsdl.c:112:14: warning: assignment makes pointer from integer without a cast [enabled by default]
+wsdl.c: At top level:
+wsdl.c:25:15: warning: ‘getpixel’ defined but not used [-Wunused-function]
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ rm wsdl.so 
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ gcc -shared -Wall -fPIC wsdl.c wsdl.h $(~/sdl1.2/bin/sdl-config --cflags --static-libs) -I.. -DUSE_DL=1 -o wsdl.so
+wsdl.c: In function ‘foreign_putpixel’:
+wsdl.c:129:14: warning: assignment makes pointer from integer without a cast [enabled by default]
+wsdl.c: At top level:
+wsdl.c:25:15: warning: ‘getpixel’ defined but not used [-Wunused-function]
+wsdl.c:87:16: warning: ‘foreign_lock’ defined but not used [-Wunused-function]
+wsdl.c:97:16: warning: ‘foreign_unlock’ defined but not used [-Wunused-function]
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ gcc -shared -Wall -fPIC wsdl.c wsdl.h $(~/sdl1.2/bin/sdl-config --cflags --static-libs) -I.. -DUSE_DL=1 -o wsdl.so
+wsdl.c: In function ‘foreign_update’:
+wsdl.c:98:25: error: expected ‘)’ before numeric constant
+wsdl.c:98:25: error: too few arguments to function ‘SDL_UpdateRect’
+/usr/include/SDL/SDL_video.h:400:30: note: declared here
+wsdl.c:99:3: error: expected ‘;’ before ‘return’
+wsdl.c:100:1: warning: no return statement in function returning non-void [-Wreturn-type]
+wsdl.c: In function ‘foreign_putpixel’:
+wsdl.c:135:14: warning: assignment makes pointer from integer without a cast [enabled by default]
+wsdl.c: At top level:
+wsdl.c:25:15: warning: ‘getpixel’ defined but not used [-Wunused-function]
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ gcc -shared -Wall -fPIC wsdl.c wsdl.h $(~/sdl1.2/bin/sdl-config --cflags --static-libs) -I.. -DUSE_DL=1 -o wsdl.so
+wsdl.c: In function ‘foreign_update’:
+wsdl.c:98:25: error: expected ‘)’ before numeric constant
+wsdl.c:98:25: error: too few arguments to function ‘SDL_UpdateRect’
+/usr/include/SDL/SDL_video.h:400:30: note: declared here
+wsdl.c: In function ‘foreign_putpixel’:
+wsdl.c:135:14: warning: assignment makes pointer from integer without a cast [enabled by default]
+wsdl.c: At top level:
+wsdl.c:25:15: warning: ‘getpixel’ defined but not used [-Wunused-function]
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ gcc -shared -Wall -fPIC wsdl.c wsdl.h $(~/sdl1.2/bin/sdl-config --cflags --static-libs) -I.. -DUSE_DL=1 -o wsdl.so
+wsdl.c: In function ‘foreign_putpixel’:
+wsdl.c:135:14: warning: assignment makes pointer from integer without a cast [enabled by default]
+wsdl.c: At top level:
+wsdl.c:25:15: warning: ‘getpixel’ defined but not used [-Wunused-function]
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ rm wsdl.so 
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ gcc -shared -Wall -fPIC wsdl.c wsdl.h $(~/sdl1.2/bin/sdl-config --cflags --static-libs) -I.. -DUSE_DL=1 -o wsdl.so
+wsdl.c: In function ‘foreign_putpixel’:
+wsdl.c:135:14: warning: assignment makes pointer from integer without a cast [enabled by default]
+wsdl.c: At top level:
+wsdl.c:25:15: warning: ‘getpixel’ defined but not used [-Wunused-function]
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ gcc -shared -Wall -fPIC wsdl.c wsdl.h $(~/sdl1.2/bin/sdl-config --cflags --static-libs) -I.. -DUSE_DL=1 -o wsdl.so
+wsdl.c: In function ‘foreign_putpixel’:
+wsdl.c:135:14: warning: assignment makes pointer from integer without a cast [enabled by default]
+wsdl.c: At top level:
+wsdl.c:25:15: warning: ‘getpixel’ defined but not used [-Wunused-function]
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ 
