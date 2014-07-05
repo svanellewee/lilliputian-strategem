@@ -1,3 +1,12 @@
+* Compiling SDL .. again!
+** sdl itself
+ ./configure --with-shared=no --with-static=yes --prefix=/home/stephan/sdl1.2 --with-pic=yes
+  make install
+** then in the tinyscheme module itself:
+ gcc -shared -Wall -fPIC wsdl.c wsdl.h $(~/sdl1.2/bin/sdl-config --cflags --static-libs) -I.. -DUSE_DL=1 -o wsdl.so
+** then you run the script
+./scheme wsdl/runsdl.scm
+
 * Original code from
 http://tinyscheme.sourceforge.net/
 Dimitrios Soulfis, Kevin Cozens and Jonathan S. Shapiro. Good work guys. 

@@ -1,0 +1,269 @@
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ ls
+Makefile    sdl-1.2     SDL-1.2.15.tar.gz  test.c   wsdl.c  wsdl.so
+runsdl.scm  SDL-1.2.15  sdl.c              test.c~  wsdl.h
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ gcc test.c $(bin/sdl-config --static-libs) -o test
+bash: bin/sdl-config: No such file or directory
+/tmp/ccAeni8a.o: In function `main':
+test.c:(.text+0x1f): undefined reference to `SDL_Init'
+test.c:(.text+0x29): undefined reference to `SDL_GetError'
+test.c:(.text+0x64): undefined reference to `SDL_Quit'
+collect2: ld returned 1 exit status
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ gcc test.c $(bin/sdl-config --cflags- --static-libs) -o test
+bash: bin/sdl-config: No such file or directory
+/tmp/ccmBzgZu.o: In function `main':
+test.c:(.text+0x1f): undefined reference to `SDL_Init'
+test.c:(.text+0x29): undefined reference to `SDL_GetError'
+test.c:(.text+0x64): undefined reference to `SDL_Quit'
+collect2: ld returned 1 exit status
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ gcc test.c $(bin/sdl-config --cflags --static-libs) -o test
+bash: bin/sdl-config: No such file or directory
+/tmp/ccPCDOw9.o: In function `main':
+test.c:(.text+0x1f): undefined reference to `SDL_Init'
+test.c:(.text+0x29): undefined reference to `SDL_GetError'
+test.c:(.text+0x64): undefined reference to `SDL_Quit'
+collect2: ld returned 1 exit status
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ gcc -c -fPIC test.c $(bin/sdl-config --cflags --static-libs) -o test
+bash: bin/sdl-config: No such file or directory
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ls
+Makefile    sdl-1.2     SDL-1.2.15.tar.gz  test    test.c~  wsdl.h
+runsdl.scm  SDL-1.2.15  sdl.c              test.c  wsdl.c   wsdl.so
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ gcc -c -fPIC test.c $(sdl-1.2/bin/sdl-config --cflags --static-libs) -o test
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ ls
+Makefile    sdl-1.2     SDL-1.2.15.tar.gz  test    test.c~  wsdl.h
+runsdl.scm  SDL-1.2.15  sdl.c              test.c  wsdl.c   wsdl.so
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ gcc -c -fPIC test.c $(sdl-1.2/bin/sdl-config --cflags --static-libs) test
+gcc: warning: test: linker input file unused because linking not done
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ gcc -c -fPIC test.c $(sdl-1.2/bin/sdl-config --cflags --static-libs) 
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ ls
+Makefile    sdl-1.2     SDL-1.2.15.tar.gz  test    test.c~  wsdl.c  wsdl.so
+runsdl.scm  SDL-1.2.15  sdl.c              test.c  test.o   wsdl.h
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ rm wsdl.o
+rm: cannot remove `wsdl.o': No such file or directory
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ rm wsdl.so 
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ ls
+Makefile    sdl-1.2     SDL-1.2.15.tar.gz  test    test.c~  wsdl.c
+runsdl.scm  SDL-1.2.15  sdl.c              test.c  test.o   wsdl.h
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ rm *~
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ ls
+Makefile    sdl-1.2     SDL-1.2.15.tar.gz  test    test.o  wsdl.h
+runsdl.scm  SDL-1.2.15  sdl.c              test.c  wsdl.c
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ rm test
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ rm test.o
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ gcc -c -fPIC test.c $(sdl-1.2/bin/sdl-config --cflags --static-libs) -o bla
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ ./bla
+bash: ./bla: Permission denied
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ gcc -c -fPIC test.c $(sdl-1.2/bin/sdl-config --cflags --libs) -o bla
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ ./bla
+bash: ./bla: Permission denied
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ ls
+bla  Makefile  runsdl.scm  sdl-1.2  SDL-1.2.15  SDL-1.2.15.tar.gz  sdl.c  test.c  wsdl.c  wsdl.h
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ rm bla 
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ rm bla 
+rm: cannot remove `bla': No such file or directory
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ ls
+Makefile  runsdl.scm  sdl-1.2  SDL-1.2.15  SDL-1.2.15.tar.gz  sdl.c  test.c  wsdl.c  wsdl.h
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ gcc -Wall -c -fPIC test.c $(sdl-1.2/bin/sdl-config --cflags --libs) -o bla
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ ./bla
+bash: ./bla: Permission denied
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ ls
+bla  Makefile  runsdl.scm  sdl-1.2  SDL-1.2.15  SDL-1.2.15.tar.gz  sdl.c  test.c  wsdl.c  wsdl.h
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ sdl-1.2/bin/sdl-config --cflags --libs
+-I/home/stephan/source/tinyscheme_orig/tinyscheme-1.41/sdl/sdl-1.2/include/SDL -D_GNU_SOURCE=1 -D_REENTRANT
+-L/home/stephan/source/tinyscheme_orig/tinyscheme-1.41/sdl/sdl-1.2/lib -Wl,-rpath,/home/stephan/source/tinyscheme_orig/tinyscheme-1.41/sdl/sdl-1.2/lib -lSDL -lpthread
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ gcc -Wall -c -fPIC test.c $(sdl-1.2/bin/sdl-config --cflags ) -o bla
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ ./bla
+bash: ./bla: Permission denied
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ gcc -Wall -c test.c $(sdl-1.2/bin/sdl-config --cflags ) -o bla
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ ls
+bla  Makefile  runsdl.scm  sdl-1.2  SDL-1.2.15  SDL-1.2.15.tar.gz  sdl.c  test.c  wsdl.c  wsdl.h
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ rm bla 
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ ls
+Makefile  runsdl.scm  sdl-1.2  SDL-1.2.15  SDL-1.2.15.tar.gz  sdl.c  test.c  wsdl.c  wsdl.h
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ ls
+Makefile  runsdl.scm  sdl-1.2  SDL-1.2.15  SDL-1.2.15.tar.gz  sdl.c  test.c  wsdl.c  wsdl.h
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ echo "gcc -c test.c $(sdl-1.2/bin/sdl-config --cflags) -o bla"
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ echo "gcc -c test.c $(sdl-1.2/bin/sdl-config --cflags) -o bla"
+gcc -c test.c -I/home/stephan/source/tinyscheme_orig/tinyscheme-1.41/sdl/sdl-1.2/include/SDL -D_GNU_SOURCE=1 -D_REENTRANT -o bla
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ gcc -c test.c -I/home/stephan/source/tinyscheme_orig/tinyscheme-1.41/sdl/sdl-1.2/include/SDL -D_GNU_SOURCE=1 -D_REENTRANT -o bla
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ echo "gcc -c test.c $(sdl-1.2/bin/sdl-config --cflags --static-libs) -o bla"
+gcc -c test.c -I/home/stephan/source/tinyscheme_orig/tinyscheme-1.41/sdl/sdl-1.2/include/SDL -D_GNU_SOURCE=1 -D_REENTRANT
+-L/home/stephan/source/tinyscheme_orig/tinyscheme-1.41/sdl/sdl-1.2/lib -Wl,-rpath,/home/stephan/source/tinyscheme_orig/tinyscheme-1.41/sdl/sdl-1.2/lib -lSDL -lpthread -lm -ldl -lvga -lpthread -o bla
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ gcc -c test.c $(sdl-1.2/bin/sdl-config --cflags --static-libs) -o bla
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ ls
+bla  Makefile  runsdl.scm  sdl-1.2  SDL-1.2.15  SDL-1.2.15.tar.gz  sdl.c  test.c  wsdl.c  wsdl.h
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ gcc -Wl,-Bstatic `sdl-config --static-libs` -Wl,-Bdynami
+/usr/bin/ld: cannot find -lasound
+/usr/bin/ld: cannot find -lpulse-simple
+/usr/bin/ld: cannot find -lpulse
+collect2: ld returned 1 exit status
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ gcc -Wl,-Bstatic `sdl-config --static-libs` -Wl,-Bdynamic
+/usr/bin/ld: cannot find -lasound
+/usr/bin/ld: cannot find -lpulse-simple
+/usr/bin/ld: cannot find -lpulse
+collect2: ld returned 1 exit status
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ gcc -Wl,-Bstatic `sdl-config --static-libs` -Wl,-Bdynamic test.c 
+/usr/bin/ld: cannot find -lasound
+/usr/bin/ld: cannot find -lpulse-simple
+/usr/bin/ld: cannot find -lpulse
+collect2: ld returned 1 exit status
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ gcc -Wl,-Bstatic $(sdl-config --static-libs) -Wl,-Bdynamic test.c 
+/usr/bin/ld: cannot find -lasound
+/usr/bin/ld: cannot find -lpulse-simple
+/usr/bin/ld: cannot find -lpulse
+collect2: ld returned 1 exit status
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ gcc -Wl,-Bstatic $(sdl-1.2/bin/sdl-config --static-libs) -Wl,-Bdynamic test.c 
+/tmp/ccB17VWr.o: In function `main':
+test.c:(.text+0x1f): undefined reference to `SDL_Init'
+test.c:(.text+0x29): undefined reference to `SDL_GetError'
+test.c:(.text+0x64): undefined reference to `SDL_Quit'
+collect2: ld returned 1 exit status
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ ls
+bla  Makefile  runsdl.scm  sdl-1.2  SDL-1.2.15  SDL-1.2.15.tar.gz  sdl.c  test.c  wsdl.c  wsdl.h
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ rm sdl-1.2/
+rm: cannot remove `sdl-1.2/': Is a directory
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ rm sdl-1.2/ -fr
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ ls
+bla  Makefile  runsdl.scm  SDL-1.2.15  SDL-1.2.15.tar.gz  sdl.c  test.c  wsdl.c  wsdl.h
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ rm SDL-1.2.15
+rm: cannot remove `SDL-1.2.15': Is a directory
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ rm SDL-1.2.15 -fr
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ ls
+bla  Makefile  runsdl.scm  SDL-1.2.15.tar.gz  sdl.c  test.c  wsdl.c  wsdl.h
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ sdl-config --cflags
+-I/usr/include/SDL -D_GNU_SOURCE=1 -D_REENTRANT
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ sdl-config --static-libs
+-L/usr/lib/x86_64-linux-gnu -lSDL -lpthread -lm -ldl -lasound -lm -ldl -lpthread -lpulse-simple -lpulse -lX11 -lXext -L/usr/lib/x86_64-linux-gnu -lcaca -lpthread
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ make
+gcc -shared -Wall -fPIC -DUSE_DL=1 -I .. -L/usr/lib/x86_64-linux-gnu -lSDL -lpthread -lm -ldl -lasound -lm -ldl -lpthread -lpulse-simple -lpulse -lX11 -lXext -L/usr/lib/x86_64-linux-gnu -lcaca -lpthread -o wsdl.so  wsdl.c
+strip wsdl.so
+ls -l wsdl.so
+-rwxrwxr-x 1 stephan stephan 6056 Jul  5 02:08 wsdl.so
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ ls
+bla  Makefile  runsdl.scm  SDL-1.2.15.tar.gz  sdl.c  test.c  wsdl.c  wsdl.h  wsdl.so
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ sdl-config --static-libs --cflags
+-L/usr/lib/x86_64-linux-gnu -lSDL -lpthread -lm -ldl -lasound -lm -ldl -lpthread -lpulse-simple -lpulse -lX11 -lXext -L/usr/lib/x86_64-linux-gnu -lcaca -lpthread
+-I/usr/include/SDL -D_GNU_SOURCE=1 -D_REENTRANT
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ ls
+bla  Makefile  runsdl.scm  SDL-1.2.15.tar.gz  sdl.c  test.c  wsdl.c  wsdl.h  wsdl.so
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ rm wsdl.
+rm: cannot remove `wsdl.': No such file or directory
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ rm wsdl.so 
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ make
+gcc -shared -Wall -fPIC -DUSE_DL=1 -I/usr/include/SDL -D_GNU_SOURCE=1 -D_REENTRANT -I .. -L/usr/lib/x86_64-linux-gnu -lSDL -lpthread -lm -ldl -lasound -lm -ldl -lpthread -lpulse-simple -lpulse -lX11 -lXext -L/usr/lib/x86_64-linux-gnu -lcaca -lpthread -o wsdl.so  wsdl.c
+strip wsdl.so
+ls -l wsdl.so
+-rwxrwxr-x 1 stephan stephan 6056 Jul  5 02:09 wsdl.so
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ ls
+bla  Makefile  runsdl.scm  SDL-1.2.15.tar.gz  sdl.c  test.c  wsdl.c  wsdl.h  wsdl.so
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ gcc $(sdl-config --static-libs --cflags) test.c -o tst
+/tmp/cciNRFic.o: In function `main':
+test.c:(.text+0x1f): undefined reference to `SDL_Init'
+test.c:(.text+0x29): undefined reference to `SDL_GetError'
+test.c:(.text+0x64): undefined reference to `SDL_Quit'
+collect2: ld returned 1 exit status
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ collect2: ld returned 1 exit status
+collect2:: command not found
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ gcc $(sdl-config --static-libs --cflags) test.c -o tst
+/tmp/cc242h91.o: In function `main':
+test.c:(.text+0x1f): undefined reference to `SDL_Init'
+test.c:(.text+0x29): undefined reference to `SDL_GetError'
+test.c:(.text+0x64): undefined reference to `SDL_Quit'
+collect2: ld returned 1 exit status
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ gcc $(sdl-config --static-libs --cflags) test.c -o tst
+/tmp/ccMQjBNR.o: In function `main':
+test.c:(.text+0x1f): undefined reference to `SDL_Init'
+test.c:(.text+0x29): undefined reference to `SDL_GetError'
+test.c:(.text+0x64): undefined reference to `SDL_Quit'
+collect2: ld returned 1 exit status
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ gcc test.c $(sdl-config --static-libs --cflags)  -o tst
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ ls
+bla       runsdl.scm  SDL-1.2.15.tar.gz  test.c          tst  wsdl.c  wsdl.so
+Makefile  SDL-1.2.15  sdl.c              thisworked.txt  tte  wsdl.h
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ rm tst 
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ rm tte 
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ rm wsdl.
+rm: cannot remove `wsdl.': No such file or directory
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ rm wsdl.so 
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ gcc -shared -Wall -fPIC -DUSE_DL=1  -I.. $(~/sdl1.2/bin/sdl-config --cflags --static-libs) -o wsdl.so  wsdl.c
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ ldd wsdl.
+ldd: ./wsdl.: No such file or directory
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ ldd wsdl.so 
+	linux-vdso.so.1 =>  (0x00007ffff7ffd000)
+	libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007ffff7a1a000)
+	/lib64/ld-linux-x86-64.so.2 (0x0000555555554000)
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ ldd ../libtinyscheme.so 
+	linux-vdso.so.1 =>  (0x00007ffff7ffd000)
+	libdl.so.2 => /lib/x86_64-linux-gnu/libdl.so.2 (0x00007ffff7bc4000)
+	libm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x00007ffff78c8000)
+	libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007ffff7507000)
+	/lib64/ld-linux-x86-64.so.2 (0x0000555555554000)
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ ls
+bla       runsdl.scm  SDL-1.2.15.tar.gz  test.c          wsdl.c  wsdl.so
+Makefile  SDL-1.2.15  sdl.c              thisworked.txt  wsdl.h
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ gcc test.c $(sdl-config --static-libs --cflags)  -o tst
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ ls
+bla       runsdl.scm  SDL-1.2.15.tar.gz  test.c          tst     wsdl.h
+Makefile  SDL-1.2.15  sdl.c              thisworked.txt  wsdl.c  wsdl.so
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ ./tst 
+Initializing SDL.
+SDL initialized.
+Quiting SDL.
+Quiting....
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ ldd ./tst 
+	linux-vdso.so.1 =>  (0x00007ffff7ffd000)
+	libSDL-1.2.so.0 => /usr/lib/x86_64-linux-gnu/libSDL-1.2.so.0 (0x00007ffff7d43000)
+	libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007ffff7983000)
+	libasound.so.2 => /usr/lib/x86_64-linux-gnu/libasound.so.2 (0x00007ffff7695000)
+	libm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x00007ffff7399000)
+	libdl.so.2 => /lib/x86_64-linux-gnu/libdl.so.2 (0x00007ffff7195000)
+	libpulse-simple.so.0 => /usr/lib/x86_64-linux-gnu/libpulse-simple.so.0 (0x00007ffff6f90000)
+	libpulse.so.0 => /usr/lib/x86_64-linux-gnu/libpulse.so.0 (0x00007ffff6d48000)
+	libX11.so.6 => /usr/lib/x86_64-linux-gnu/libX11.so.6 (0x00007ffff6a13000)
+	libXext.so.6 => /usr/lib/x86_64-linux-gnu/libXext.so.6 (0x00007ffff6801000)
+	libcaca.so.0 => /usr/lib/x86_64-linux-gnu/libcaca.so.0 (0x00007ffff6536000)
+	libpthread.so.0 => /lib/x86_64-linux-gnu/libpthread.so.0 (0x00007ffff6319000)
+	/lib64/ld-linux-x86-64.so.2 (0x0000555555554000)
+	librt.so.1 => /lib/x86_64-linux-gnu/librt.so.1 (0x00007ffff6110000)
+	libpulsecommon-1.1.so => /usr/lib/x86_64-linux-gnu/libpulsecommon-1.1.so (0x00007ffff5eb2000)
+	libjson.so.0 => /usr/lib/x86_64-linux-gnu/libjson.so.0 (0x00007ffff5caa000)
+	libdbus-1.so.3 => /lib/x86_64-linux-gnu/libdbus-1.so.3 (0x00007ffff5a65000)
+	libxcb.so.1 => /usr/lib/x86_64-linux-gnu/libxcb.so.1 (0x00007ffff5847000)
+	libslang.so.2 => /lib/x86_64-linux-gnu/libslang.so.2 (0x00007ffff54d6000)
+	libncursesw.so.5 => /lib/x86_64-linux-gnu/libncursesw.so.5 (0x00007ffff52a8000)
+	libtinfo.so.5 => /lib/x86_64-linux-gnu/libtinfo.so.5 (0x00007ffff5081000)
+	libz.so.1 => /lib/x86_64-linux-gnu/libz.so.1 (0x00007ffff4e6a000)
+	libwrap.so.0 => /lib/x86_64-linux-gnu/libwrap.so.0 (0x00007ffff4c60000)
+	libsndfile.so.1 => /usr/lib/x86_64-linux-gnu/libsndfile.so.1 (0x00007ffff49f9000)
+	libasyncns.so.0 => /usr/lib/x86_64-linux-gnu/libasyncns.so.0 (0x00007ffff47f3000)
+	libXau.so.6 => /usr/lib/x86_64-linux-gnu/libXau.so.6 (0x00007ffff45ef000)
+	libXdmcp.so.6 => /usr/lib/x86_64-linux-gnu/libXdmcp.so.6 (0x00007ffff43e9000)
+	libnsl.so.1 => /lib/x86_64-linux-gnu/libnsl.so.1 (0x00007ffff41cf000)
+	libFLAC.so.8 => /usr/lib/x86_64-linux-gnu/libFLAC.so.8 (0x00007ffff3f84000)
+	libvorbisenc.so.2 => /usr/lib/x86_64-linux-gnu/libvorbisenc.so.2 (0x00007ffff3ab5000)
+	libvorbis.so.0 => /usr/lib/x86_64-linux-gnu/libvorbis.so.0 (0x00007ffff3889000)
+	libogg.so.0 => /usr/lib/x86_64-linux-gnu/libogg.so.0 (0x00007ffff3681000)
+	libresolv.so.2 => /lib/x86_64-linux-gnu/libresolv.so.2 (0x00007ffff3465000)
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ ~/sdl1.2/bin/sdl-config --cflags --static-libs
+-I/home/stephan/sdl1.2/include/SDL -D_GNU_SOURCE=1 -D_REENTRANT
+-L/home/stephan/sdl1.2/lib -Wl,-rpath,/home/stephan/sdl1.2/lib -lSDL -lpthread -lm -ldl -lvga -lpthread
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ gcc -shared -Wall -fPIC wsdl.c wsdl.h $(~/sdl1.2/bin/sdl-config --cflags --static-libs) -o wsdl.so
+wsdl.c:1:28: fatal error: scheme-private.h: No such file or directory
+compilation terminated.
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ gcc -shared -Wall -fPIC wsdl.c wsdl.h $(~/sdl1.2/bin/sdl-config --cflags --static-libs) -I.. -o wsdl.so
+wsdl.c: In function ‘init_wsdl’:
+wsdl.c:38:11: error: dereferencing pointer to incomplete type
+wsdl.c:39:35: error: dereferencing pointer to incomplete type
+wsdl.c:40:35: error: dereferencing pointer to incomplete type
+wsdl.c:42:11: error: dereferencing pointer to incomplete type
+wsdl.c:43:35: error: dereferencing pointer to incomplete type
+wsdl.c:44:35: error: dereferencing pointer to incomplete type
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ gcc -shared -Wall -fPIC wsdl.c wsdl.h $(~/sdl1.2/bin/sdl-config --cflags --static-libs) -I.. -DUSE_DL=1 -o wsdl.so
+/usr/bin/ld: /home/stephan/sdl1.2/lib/libSDL.a(SDL.o): relocation R_X86_64_32 against `.rodata.str1.1' can not be used when making a shared object; recompile with -fPIC
+/home/stephan/sdl1.2/lib/libSDL.a: could not read symbols: Bad value
+collect2: ld returned 1 exit status
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ gcc -shared -Wall -fPIC wsdl.c wsdl.h $(~/sdl1.2/bin/sdl-config --cflags --static-libs) -I.. -DUSE_DL=1 -o wsdl.so
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ ls
+bla       runsdl.scm  SDL-1.2.15.tar.gz  test.c          tst     wsdl.h
+Makefile  SDL-1.2.15  sdl.c              thisworked.txt  wsdl.c  wsdl.so
+stephan@Nostromo:~/source/tinyscheme_orig/tinyscheme-1.41/wsdl$ 

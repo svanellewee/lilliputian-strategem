@@ -1,0 +1,1000 @@
+ 1032  echo "*pyc" >> .gitignore
+ 1033  rm .git -fr
+ 1034  git init .
+ 1035  git add .gitignore
+ 1036  git add dependencies.txt
+ 1037  git add mmc/
+ 1038  git status
+ 1039  git commit -m "Init commit"
+ 1040  git status
+ 1041  acroread ~/Downloads/FunctionalPythonTalk/django.pdf
+ 1042  pip install mysqldb
+ 1043  pip install MySQLdb
+ 1044  cat ~/.pip/pip.log 
+ 1045  pip install MySQL_python
+ 1046  sudo apt-get install libpython-dev
+ 1047  sudo apt-get install libpython2.7-dev
+ 1048  sudo apt-get install libpython2-dev
+ 1049  pip install MySQL_python
+ 1050  pip freeze > dependencies.txt
+ 1051  cat dependencies.txt 
+ 1052  git status
+ 1053  git add dependencies.txt
+ 1054  echo "Remember MySQLdb is actually MySQL_python" >> notes.txt
+ 1055  git add notes.txt
+ 1056  git commit -m "added more info"
+ 1057  git status
+ 1058  emacs . &
+ 1059  ls
+ 1060  mmc
+ 1061  ls mmc 
+ 1062  ls
+ 1063  cd mmc/
+ 1064  python manage.py loaddb
+ 1065  python manage.py help
+ 1066  python manage.py inspectdb
+ 1067  ls
+ 1068  cat db.sqlite3 
+ 1069  rm db.sqlite3 
+ 1070  python manage.py inspectdb
+ 1071  ls
+ 1072  ls
+ 1073  cd ..
+ 1074  ls
+ 1075  cd mmc_django/
+ 1076  ls
+ 1077  rm mysql_ops.txt
+ 1078  rm *~
+ 1079  ls
+ 1080  cat notes.txt 
+ 1081  locate mysql
+ 1082  locate mysql |grep *cnf
+ 1083  ls /usr
+ 1084  sudo su
+ 1085  mysql -u mmcuser -ppassword -D MetacomMC
+ 1086  mysql -u root -p
+ 1087  ls
+ 1088  mysql -u root -p
+ 1089  emacs . &
+ 1090  ls
+ 1091  cd ..
+ 1092  ls
+ 1093  cd mmc_django/
+ 1094  ls
+ 1095  cd mmc/
+ 1096  le
+ 1097  ls
+ 1098  emacs mmc/settings.py &
+ 1099  ls
+ 1100  python manage.py syncdb
+ 1101  ls
+ 1102  ls base 
+ 1103  ls mmc 
+ 1104  cd ..
+ 1105  ls
+ 1106  . ./venv/bin/activate
+ 1107  ls
+ 1108  cd mmc/
+ 1109  ls
+ 1110  python manage.py syncdb
+ 1111  python manage.py schemamigration --init base
+ 1112  python manage.py migrate
+ 1113  python manage.py shell
+ 1114  ls
+ 1115  rm *o
+ 1116  luajit -b hacky.lua  -o hacky.o
+ 1117  luajit -b hacky.lua  hacky.o
+ 1118  ls
+ 1119  cat hacky.lua 
+ 1120  cat hacky.o
+ 1121  luajit -b tools.lua tools.o
+ 1122  ls
+ 1123  ar rcus liblua.a *.o
+ 1124  ls
+ 1125  rm liblua.a # too close to base lib names
+ 1126  ar rcus libfuntest.a *.o
+ 1127  ls
+ 1128  ls -ahltr
+ 1129  gcc -Wl,--whole-archive -lfuntest -Wl,--no-while-archive -Wl,-E hello
+ 1130  gcc -Wl,--whole-archive -lfuntest -Wl,--no-while-archive -Wl,-E 
+ 1131  gcc -Wl,--whole-archive -lfuntest -Wl,--no-whole-archive -Wl,-E 
+ 1132  ls
+ 1133  gcc -L. -Wl,--whole-archive -lfuntest -Wl,--no-whole-archive -Wl,-E 
+ 1134  rm tools.lua 
+ 1135  luajit hacky.lua 
+ 1136  git checkout tools.lua
+ 1137  ls
+ 1138  luajit hacky.lua 
+ 1139  ls -ahltr *o
+ 1140  luajit -bg tools.lua tools.o
+ 1141  ls -ahltr *o
+ 1142  luajit -bg hacky.lua hacky.o
+ 1143  ls -ahltr *o
+ 1144  ls
+ 1145  luajit -bg tools.lua tools.h
+ 1146  luajit -bg hacky.lua hacky.h
+ 1147  ls
+ 1148  export PREFIX=/home/stephan/lua_env/luajit
+ 1149  export INCDIR=$PREFIX/include/luajit-2.0
+ 1150  export LIBDIR=$PREFIX/lib
+ 1151  export LIBNAME=luajit-5.1
+ 1152  gcc -Wl,-E -lm -ldl -L$INCDIR -lluajit-5.1 -I$INCDIR app2.c
+ 1153  gcc -Wl,-E -lm -ldl -L$INCDIR -lluajit-2.0 -I$INCDIR app2.c
+ 1154  gcc -Wl,-E -lm -ldl -L$INCDIR -l$LIBNAME -I$INCDIR app2.c
+ 1155  gcc  -L$INCDIR -l$LIBNAME -I$INCDIR app2.c -Wl,-E -lm -ldl
+ 1156  ls
+ 1157  popd
+ 1158  cd ~/source/lua
+ 1159  luajit 
+ 1160  cd luajitty/
+ 1161  ls
+ 1162  gcc -L/home/stephan/lua_env/luajit/lib -I/home/stephan/lua_env/luajit/include/luajit-2.0 -llua51 runtest
+ 1163  gcc -L/home/stephan/lua_env/luajit/lib -I/home/stephan/lua_env/luajit/include/luajit-2.0 -llua51 app2.c
+ 1164  pushd ~/lua_env/luajit/
+ 1165  ls
+ 1166  cd lib/
+ 1167  ls
+ 1168  popd
+ 1169  gcc -L/home/stephan/lua_env/luajit/lib -I/home/stephan/lua_env/luajit/include/luajit-2.0 -lluajit-51 app2.c
+ 1170  gcc -L/home/stephan/lua_env/luajit/lib -I/home/stephan/lua_env/luajit/include/luajit-2.0 -lluajit app2.c
+ 1171  popd
+ 1172  pushd ~/lua_env/luajit/
+ 1173  ls
+ 1174  cd lib/
+ 1175  ls
+ 1176  ls pkgconfig/
+ 1177  cd ..
+ 1178  ls
+ 1179  cd bin/
+ 1180  ls
+ 1181  pkg-config .
+ 1182  ls
+ 1183  cd ..
+ 1184  ls
+ 1185  pkg-config lib/pkgconfig/luajit.pc 
+ 1186  cat lib/pkgconfig/luajit.pc 
+ 1187  node base.js 
+ 1188  node
+ 1189  node base.js 
+ 1190  mysql
+ 1191  mysql -uroot -p
+ 1192  mysql -utest -ppassword -DHardway
+ 1193  mysql -utest -ppassword -Dhardway
+ 1194  emacs . &
+ 1195  cd mmc_django/
+ 1196  ls
+ 1197  cd ..
+ 1198  mkdir mmc_node
+ 1199  cd mmc_node/
+ 1200  npm install mysql
+ 1201  ls
+ 1202  ls -ahltr
+ 1203  tree .
+ 1204  node
+ 1205  emacs . &
+ 1206  exit
+ 1207  . ./venv/bin/activate
+ 1208  python manage.shell
+ 1209  python manage shell
+ 1210  ls
+ 1211  cd mmc/
+ 1212  python manage.py 
+ 1213  python manage.py  shell
+ 1214  cd mmc_django/
+ 1215  ls
+ 1216  . ./venv/bin/activate
+ 1217  emacs . &
+ 1218  exit
+ 1219  cd source/lua/moonweb/
+ 1220  ./do_rsync 192.168.1.1
+ 1221  sudo su
+ 1222  sudo ifconfig eth1 192.168.1.2
+ 1223  ./do_rsync 192.168.1.1
+ 1224  ssh-keygen -f "/home/stephan/.ssh/known_hosts" -R 192.168.1.1
+ 1225  ./do_rsync 192.168.1.1
+ 1226  ssh svanellewee@192.168.2.72
+ 1227  cd source/lua
+ 1228  cd moonweb/
+ 1229  ./do_rsync 192.168.1.1
+ 1230  ssh root@192.168.1.1
+ 1231  emacs . &
+ 1232  ./do_rsync 192.168.1.1
+ 1233  ssh root@192.168.1.1
+ 1234  sudo ifconfig eth1 192.168.1.1
+ 1235  ssh root@192.168.1.1
+ 1236  ssh-keygen -f "/home/stephan/.ssh/known_hosts" -R 192.168.1.1
+ 1237  ssh root@192.168.1.1
+ 1238  sudo ifconfig eth1 192.168.1.1
+ 1239  ssh root@192.168.1.1
+ 1240  sudo ifconfig eth1 192.168.1.2
+ 1241  ssh root@192.168.1.1
+ 1242  ssh-keygen -f "/home/stephan/.ssh/known_hosts" -R 192.168.1.1
+ 1243  ssh root@192.168.1.1
+ 1244  ./do_rsync 192.168.1.1
+ 1245  guile cctest.scm
+ 1246  guile
+ 1247  ruby yinrang.rb
+ 1248  guile
+ 1249  guile
+ 1250  emacs source/scheme/cctest.scm &
+ 1251  cd source/guile-2.0.11.2-0ece4-dirty/
+ 1252  ls
+ 1253  cd examples/
+ 1254  ls
+ 1255  ./check.test 
+ 1256  guile check.test 
+ 1257  cat check.test 
+ 1258  guile
+ 1259  ls
+ 1260  ./check.test 
+ 1261  which lua
+ 1262  which guile
+ 1263  nano check.test 
+ 1264  ls
+ 1265  cd ..
+ 1266  pwd
+ 1267  export GUILE=$(pwd)
+ 1268  echo GUILE
+ 1269  echo $GUILE
+ 1270  cd examples/
+ 1271  ./check.test 
+ 1272  ls
+ 1273  ./check.test 
+ 1274  cd ..
+ 1275  ls
+ 1276  cd examples/
+ 1277  nano check.test 
+ 1278  cd ..
+ 1279  ls
+ 1280  cd examples/
+ 1281  nano check.test 
+ 1282  export GUILE=$(pwd)
+ 1283  ./check.test 
+ 1284  ls -ahltr
+ 1285  make
+ 1286  cd web/
+ 1287  ls
+ 1288  guile hello.scm 
+ 1289  ls
+ 1290  cat debug-sxml.scm 
+ 1291  guile debug-sxml.scm 
+ 1292  ls
+ 1293  cd ..
+ 1294  ls
+ 1295  cd box
+ 1296  ls
+ 1297  cd ..
+ 1298  cd box-dynamic
+ 1299  ls
+ 1300  cd ..
+ 1301  ls
+ 1302  cd scripts/
+ 1303  ls
+ 1304  ./hello 
+ 1305  ./fact 
+ 1306  ./fact 2
+ 1307  ./fact 10
+ 1308  ./fact 5
+ 1309  ls
+ 1310  guile simple-hello.scm 
+ 1311  cd ..
+ 1312  ls
+ 1313  cd modules/
+ 1314  ls
+ 1315  guile main 
+ 1316  cd ..
+ 1317  ls
+ 1318  cd safe/
+ 1319  ls
+ 1320  ./safe 
+ 1321  cat evil.scm 
+ 1322  ./safe evil.scm 
+ 1323  ls
+ 1324  cd ..
+ 1325  ls
+ 1326  cd ..
+ 1327  ls
+ 1328  cd emacs/
+ 1329  ls
+ 1330  cat README 
+ 1331  make
+ 1332  ls
+ 1333  make patch.el
+ 1334  ls
+ 1335  cd ..
+ 1336  ls
+ 1337  cd benchmark-suite/
+ 1338  ls
+ 1339  ./guile-benchmark 
+ 1340  guile ./guile-benchmark 
+ 1341  cd ..
+ 1342  ls
+ 1343  cd module/
+ 1344  ls
+ 1345  cd ice-9/
+ 1346  ls
+ 1347  cd ../../test-suite/
+ 1348  ls
+ 1349  cd standalone/
+ 1350  ls
+ 1351  cd ..
+ 1352  ls
+ 1353  cd ..
+ 1354  ls
+ 1355  ruby
+ 1356  irb
+ 1357  emacs yinrang.rb &
+ 1358  exit
+ 1359  sudo emacs /etc/fstab
+ 1360  exit
+ 1361  cat hello.scm 
+ 1362  exitg
+ 1363  exit
+ 1364  ps aux |grep scheme
+ 1365  exit
+ 1366  ps aux |grep tiny
+ 1367  ps aux |grep scheme
+ 1368  ps aux |grep lua
+ 1369  ps aux
+ 1370  ps aux |less
+ 1371  ps aux |grep lua
+ 1372  ps aux |grep scheme
+ 1373  exit
+ 1374  ps aux |grep lua
+ 1375  ps aux |grep chibii
+ 1376  ps aux |grep chibi
+ 1377  cd ..
+ 1378  mkdir tinyscheme
+ 1379  cp ~/Downloads/tinyscheme-1.41.tar.gz tinyscheme 
+ 1380  cd tiny
+ 1381  cd tinyscheme/
+ 1382  ls
+ 1383  tar -xzvf tinyscheme-1.41.tar.gz 
+ 1384  ls
+ 1385  cd tinyscheme-1.41/
+ 1386  ls
+ 1387  make
+ 1388  ls
+ 1389  ./scheme 
+ 1390  nano test.scm
+ 1391  ./scheme 
+ 1392  nano test.scm
+ 1393  ./scheme test.scm 
+ 1394  nano test.scm
+ 1395  ./scheme test.scm 
+ 1396  nano test.scm
+ 1397  emacs . &
+ 1398  make clean && make
+ 1399  ./scheme test.scm 
+ 1400  ./scheme 
+ 1401  ls
+ 1402  make clean
+ 1403  git init .
+ 1404  git status
+ 1405  git add .
+ 1406  git status
+ 1407  git commit -m "added call/cc modified code (http://sourceforge.net/p/tinyscheme/bugs/31/) "
+ 1408  git log --decorate --oneline --graph
+ 1409  ls
+ 1410  cat hack.txt 
+ 1411  ls
+ 1412  emacs . &
+ 1413  mkdir older
+ 1414  cp ~/Downloads/minischeme.tar.gz older 
+ 1415  cd older/
+ 1416  ls
+ 1417  tar -xzvf minischeme.tar.gz 
+ 1418  emacs . &
+ 1419  cd ..
+ 1420  mkdir tsx
+ 1421  cp ~/Downloads/tsx-1.1.tgz tsx 
+ 1422  cd tsx/
+ 1423  ls
+ 1424  tar -xzvf tsx-1.1.tgz 
+ 1425  ls
+ 1426  cd tsx-1.1/
+ 1427  ls
+ 1428  make
+ 1429  ls
+ 1430  cd ..
+ 1431  ls
+ 1432  cp * tsx 
+ 1433  cd tsx/
+ 1434  ls
+ 1435  mv * tsx-1.1
+ 1436  ls
+ 1437  mv tsx-1.1/tsx-1.1.tgz .
+ 1438  cd tsx-1.1/
+ 1439  ls
+ 1440  make
+ 1441  ls
+ 1442  cd ..
+ 1443  mv tsx-1.1 temp
+ 1444  tar xzvf tsx-1.1.tgz 
+ 1445  ls
+ 1446  cd tsx-1.1/
+ 1447  ls
+ 1448  cp ../temp/scheme-private.h .
+ 1449  cp ../temp/*.c .
+ 1450  ls
+ 1451  make
+ 1452  cp ../temp/*.h .
+ 1453  ls
+ 1454  make
+ 1455  ls
+ 1456  cat README 
+ 1457  ls
+ 1458  cp tsx.so ../../
+ 1459  cp *scm ../../
+ 1460  cd ../../
+ 1461  ls
+ 1462  ./scheme srepl.scm 
+ 1463  mkdir tsx-1.0/
+ 1464  cp tsx.so tsx-1.0 
+ 1465  ./scheme srepl.scm 
+ 1466  cat srepl.scm 
+ 1467  ./scheme srepl.scm 
+ 1468  exit
+ 1469  ps aux |grep scheme
+ 1470  ps aux |grep lua
+ 1471  exit
+ 1472  cd Downloads/
+ 1473  cd FunctionalPythonTalk/
+ 1474  ls
+ 1475  acroread real-world-haskell.pdf
+ 1476  ls
+ 1477  cat Functional Programming with Python
+ 1478  cat Functional\ Programming\ with\ Python.html
+ 1479  ls
+ 1480  ls /etc/bash_completion
+ 1481  cat /etc/bash_completion
+ 1482  ls
+ 1483  cd ~/Downloads/
+ 1484  ls
+ 1485  mkdir  ~/source/chibi
+ 1486  cp chibi-scheme-0.6.1.tgz ~/source/chibi 
+ 1487  cd ~/source/chibi/
+ 1488  tar -xzvf chibi-scheme-0.6.1.tgz 
+ 1489  ls
+ 1490  cd chibi-scheme-0.6.1/
+ 1491  ls
+ 1492  make
+ 1493  ls
+ 1494  ./chibi-scheme 
+ 1495  echo $LD_LIBRARY_PATH
+ 1496  export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$(pwd)
+ 1497  echo $LD_LIBRARY_PATH
+ 1498  ./chibi-scheme 
+ 1499  ls
+ 1500  cd examples/
+ 1501  ls
+ 1502  ../chibi-scheme echo-server.scm 
+ 1503  cd ..
+ 1504  ls
+ 1505  cd tests/
+ 1506  ls
+ 1507  cd ..
+ 1508  ls
+ 1509  cd tools/
+ 1510  ls
+ 1511  cd ..
+ 1512  ls -ahtlr
+ 1513  cd ..
+ 1514  ls
+ 1515  ./chibi-scheme-0.6.1/
+ 1516  cd ./chibi-scheme-0.6.1/
+ 1517  ./chibi-scheme 
+ 1518  ps aux |grep chibi
+ 1519  pidof chibi-scheme
+ 1520  ls
+ 1521  lua
+ 1522  ssh root@192.168.1.1
+ 1523  cd source/
+ 1524  ls
+ 1525  cd lua
+ 1526  ls
+ 1527  ls -ahltr
+ 1528  cdcd moonweb/
+ 1529  cd moonweb/
+ 1530  ls
+ 1531  emacs . &
+ 1532  sudo ifconfig eth1 192.168.1.2
+ 1533  ./do_rsync 192.168.1.1
+ 1534  [A
+ 1535  ./do_rsync 192.168.1.1
+ 1536  sudo ifconfig eth1 192.168.1.2
+ 1537  ./do_rsync 192.168.1.1
+ 1538  sudo ifconfig eth1 192.168.1.2
+ 1539  ./do_rsync 192.168.1.1
+ 1540  sudo ifconfig eth1 192.168.1.2
+ 1541  ls
+ 1542  sudo ifconfig eth1 192.168.1.2
+ 1543  ssh-keygen -f "/home/stephan/.ssh/known_hosts" -R 192.168.1.1
+ 1544  ./do_rsync 192.168.1.1
+ 1545  ls
+ 1546  cd ..
+ 1547  ls
+ 1548  cd hackjit/
+ 1549  ls
+ 1550  cd ..
+ 1551  mkdir jithack
+ 1552  cd jithack/
+ 1553  ls
+ 1554  emacs app.lua &
+ 1555  cd source/
+ 1556  cd lua
+ 1557  cd mo
+ 1558  cd moonweb/
+ 1559  ls
+ 1560  cd package/web/
+ 1561  ls
+ 1562  ls *.lua
+ 1563  for i in `ls *.lua`; do echo $i; done;
+ 1564  for i in `ls *.lua`; do echo `basename $i .lua`; done;
+ 1565  for i in `ls *.lua`; do echo %i `basename $i .lua`; done;
+ 1566  for i in `ls *.lua`; do echo $i `basename $i .lua`; done;
+ 1567  for i in `ls *.lua`; do echo $i `basename $i .lua`.o; done;
+ 1568  for i in `ls *.lua`; do luajit -b  $i `basename $i .lua`.o; done;
+ 1569  ls
+ 1570  gcc -Wall -Wl,-E -o appx capp.c main.o utils.o -I/home/stephan/lua_env/luajit/include/luajit-2.0 -L/home/stephan/lua_env/luajit/lib -lluajit-5.1 -lm -ldl
+ 1571  gcc -Wall -Wl,-E -o appx capp.c *.o -I/home/stephan/lua_env/luajit/include/luajit-2.0 -L/home/stephan/lua_env/luajit/lib -lluajit-5.1 -lm -ldl
+ 1572  ls
+ 1573  rm appx 
+ 1574  ls
+ 1575  nano capp.c 
+ 1576  nano 
+ 1577  ls
+ 1578  ./appx
+ 1579  export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/stephan/lua_env/luajit/lib/
+ 1580  ./appx
+ 1581  ls
+ 1582  mkdir lus
+ 1583  mkdir rootluas
+ 1584  cp *.lua rootluas 
+ 1585  ls
+ 1586  mv *.lua rootluas 
+ 1587  ls
+ 1588  ./app
+ 1589  ./appx
+ 1590  history > hackobjs.txt
+ 1591  git status
+ 1592  git add capp.c
+ 1593  git status
+ 1594  git add../../doc/luajit/compilation/jithack/notes.org
+ 1595   ../../doc/luajit/compilation/jithack/notes.org
+ 1596  telnet localhost 9000
+ 1597  ls
+ 1598  cd tsx
+ 1599  ls
+ 1600  cd tsx-1.1/
+ 1601  ls
+ 1602  emacs srepl.scm &
+ 1603  ls
+ 1604  cd ..
+ 1605  ls
+ 1606  cd ..
+ 1607  ls
+ 1608  ls *scm
+ 1609  ./scheme listhome.scm 
+ 1610  ls
+ 1611  ls *scm
+ 1612  ./scheme test.scm 
+ 1613  nano test.scm 
+ 1614  nano srepl.scm 
+ 1615  ls
+ 1616  grep load-exten *.scm
+ 1617  ./scheme 
+ 1618  ./scheme hackscheme.scm 
+ 1619  ./scheme 
+ 1620  ./scheme hackscheme.scm 
+ 1621  ls
+ 1622  ./scheme hackscheme.scm 
+ 1623  exit
+ 1624  ls
+ 1625  ./scheme hackscheme.scm 
+ 1626  ls
+ 1627  cp hackscheme.scm testcases_ideas/
+ 1628  rm hackscheme.scm
+ 1629  ls
+ 1630  cd example_extension/
+ 1631  ls
+ 1632  rm *~
+ 1633  ls
+ 1634  make
+ 1635  ls
+ 1636  cd ..
+ 1637  mv example_extension/ example
+ 1638  ls
+ 1639  ./scheme 
+ 1640  cd example/
+ 1641  make clean
+ 1642  make
+ 1643  cd .
+ 1644  ls
+ 1645  cd ..
+ 1646  ./scheme 
+ 1647  ls
+ 1648  mkdir sdl
+ 1649  cp ~/Downloads/SDL-1.2.15.tar.gz sdl/
+ 1650  cd sdl/
+ 1651  ls
+ 1652  tar xzvf SDL-1.2.15.tar.gz 
+ 1653  ls
+ 1654  cd SDL-1.2.15/
+ 1655  ls
+ 1656  ./configure --prefix=/home/stephan/source/tinyscheme_orig/tinyscheme-1.41/sdl/sdl-1.2
+ 1657  make install
+ 1658  ls
+ 1659  cd ..
+ 1660  ls
+ 1661  cd sdl-1.2/
+ 1662  ls
+ 1663  cd bin/
+ 1664  ls
+ 1665  sdl-config 
+ 1666  ./sdl-config 
+ 1667  ./sdl-config --cflags --libs
+ 1668  ls
+ 1669  cd ..
+ 1670  ls
+ 1671  cd ..
+ 1672  ls
+ 1673  cd ..
+ 1674  ls
+ 1675  cd sdl/
+ 1676  ls
+ 1677  cp ../example/* .
+ 1678  ls
+ 1679  rm moddy.so 
+ 1680  cp moddy.c sdl.c
+ 1681  cp moddy.h sdl.h
+ 1682  ls
+ 1683  rm moddy.c
+ 1684  rm moddy.h 
+ 1685  ls
+ 1686  rm *~
+ 1687  ls
+ 1688  cd sdl-1.2/
+ 1689  ls
+ 1690  cd bin/
+ 1691  ls
+ 1692  sdl-config 
+ 1693  sdl-config --cflags --libs
+ 1694  ls
+ 1695  cd ..
+ 1696  ls
+ 1697  cd include/
+ 1698  ls
+ 1699  cd SDL/
+ 1700  ls
+ 1701  pwd
+ 1702  ls
+ 1703  cd ..
+ 1704  ls
+ 1705  cd lib/
+ 1706  ls
+ 1707  pwd
+ 1708  make
+ 1709  cd ..
+ 1710  ls
+ 1711  make
+ 1712  ls
+ 1713  cd ..
+ 1714  ls
+ 1715  ./scheme 
+ 1716  cd sdl/
+ 1717  make clean
+ 1718  make
+ 1719  cd ..
+ 1720  ls
+ 1721  ./scheme 
+ 1722  ls
+ 1723  cd sdl/
+ 1724  ls
+ 1725  make clean
+ 1726  make
+ 1727  ls
+ 1728  cd sdl-1.2/
+ 1729  ls
+ 1730  cd lib/
+ 1731  ls
+ 1732  export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$(pwd)
+ 1733  cd ..
+ 1734  cd..
+ 1735  cd ..
+ 1736  ls
+ 1737  ./scheme sdl/runsdl.scm 
+ 1738  clear
+ 1739  ./scheme sdl/runsdl.scm 
+ 1740  ls
+ 1741  cd sdl/
+ 1742  ls
+ 1743  make clean
+ 1744  ls
+ 1745  make
+ 1746  cd..
+ 1747  cd ..
+ 1748  ./scheme sdl/runsdl.scm 
+ 1749  ls
+ 1750  cd sdl/
+ 1751  ls
+ 1752  cd sdl-1.2/
+ 1753  ls
+ 1754  cd bin/
+ 1755  ls
+ 1756  ./sdl-config --cflags
+ 1757  ./sdl-config --clibs
+ 1758  ./sdl-config --libs --cflags
+ 1759  ls
+ 1760  cd ..
+ 1761  ls
+ 1762  cd ..
+ 1763  make clean
+ 1764  make
+ 1765  ls
+ 1766  cd ..
+ 1767  ./scheme sdl/runsdl.scm 
+ 1768  echo $LD_LIBRARY_PATH
+ 1769  export LD_LIBRARY_PATH=/home/stephan/source/tinyscheme_orig/tinyscheme-1.41/sdl/sdl-1.2/lib
+ 1770  echo $LD_LIBRARY_PATH
+ 1771  ./scheme sdl/runsdl.scm 
+ 1772  ls
+ 1773  cd sdl/
+ 1774  ls
+ 1775  mv sdl.c wsdl.c
+ 1776  mv sdl.h wsdl.h
+ 1777  rm sdl.so 
+ 1778  ls
+ 1779  cd ..
+ 1780  cd wsdl/
+ 1781  ls
+ 1782  make clean
+ 1783  make
+ 1784  ls
+ 1785  cd sdl-1.2/
+ 1786  cd bin/
+ 1787  ./sdl-config 
+ 1788  ./sdl-config  --static-libs
+ 1789  ./sdl-config  --cflags --libs
+ 1790  cd ..
+ 1791  ls
+ 1792  rm wsdl.
+ 1793  rm wsdl.so 
+ 1794  make
+ 1795  ls
+ 1796  cd ..
+ 1797  ls
+ 1798  ./scheme wsdl/runsdl.scm 
+ 1799  nm wsdl/wsdl.so 
+ 1800  readelf wsdl/wsdl.
+ 1801  readelf wsdl/wsdl.so 
+ 1802  readelf -Ws wsdl/wsdl.so 
+ 1803  ls
+ 1804  cd wsdl/
+ 1805  s
+ 1806  ls
+ 1807  make clean
+ 1808  ls
+ 1809  sdl-1.2/bin/sdl-config --static-libs
+ 1810  sdl-1.2/bin/sdl-config --static-libs --cflags
+ 1811  make
+ 1812  ls
+ 1813  ls -ahtlr
+ 1814  make clean
+ 1815  make
+ 1816  ls
+ 1817  ls -ahtlr
+ 1818  make clean
+ 1819  make
+ 1820  ls
+ 1821  ls SDL-1.2.15
+ 1822  ls sdl-1.2/
+ 1823  ls sdl-1.2/share/
+ 1824  ls sdl-1.2/lib/
+ 1825  ls sdl-1.2/include/
+ 1826  ls sdl-1.2/include/SDL/
+ 1827  make clean
+ 1828  make
+ 1829  ls
+ 1830  cd sdl-1.2/
+ 1831  ls
+ 1832  ./bin/sdl-config 
+ 1833  ./bin/sdl-config --static-libs
+ 1834  ./bin/sdl-config --libs
+ 1835  ./bin/sdl-config --libs --cflags
+ 1836  ./bin/sdl-config -static-libs
+ 1837  ./bin/sdl-config --static-libs
+ 1838  ./bin/sdl-config --cflags --static-libs
+ 1839  cd..
+ 1840  cd ..
+ 1841  ls
+ 1842  make clean make
+ 1843  make clean && make
+ 1844  ls
+ 1845  nano test.c
+ 1846  exit
+ 1847  cd ../../
+ 1848  cd tinyscheme
+ 1849  los
+ 1850  ls
+ 1851  cd tinyscheme-1.41/
+ 1852  ls
+ 1853  git status
+ 1854  git log 
+ 1855  ls
+ 1856  cd tsx
+ 1857  ls
+ 1858  cp tsx-1.1.tgz ~/source/tinyscheme_orig 
+ 1859  exit
+ 1860  cd ..
+ 1861  mkdir tinyscheme_orig
+ 1862  cp ~/Downloads/tinyscheme-1.41.tar.gz tinyscheme_orig 
+ 1863  cd tinyscheme_orig/
+ 1864  ls
+ 1865  tar -zxvf tinyscheme-1.41.tar.gz 
+ 1866  git init .
+ 1867  ls
+ 1868  rm tinyscheme-1.41.tar.gz 
+ 1869  ls
+ 1870  rm .git -fr
+ 1871  cd tinyscheme-1.41/
+ 1872  ls
+ 1873  git init .
+ 1874  git status
+ 1875  git commit -m "Version from sourceforge"
+ 1876  git add .
+ 1877  git commit -m "Version from sourceforge"
+ 1878  git status
+ 1879  ls
+ 1880  cat COPYING 
+ 1881  ls
+ 1882  git remote add github svanellewee@https://github.com/svanellewee/lilliputian-strategem
+ 1883  git push github
+ 1884  nano .git/config 
+ 1885  git push github
+ 1886  git remote add github https://github.com/svanellewee/lilliputian-strategem.git
+ 1887  nano .git/config 
+ 1888  git remove -v
+ 1889  git remote -v
+ 1890  git push github
+ 1891  git push github -u
+ 1892  git push github master
+ 1893  nano .git/config 
+ 1894  git push github master
+ 1895  git pull github 
+ 1896  git merge origin/master
+ 1897  git fetch github/master
+ 1898  git fetch github
+ 1899  ls
+ 1900  git merge github/master
+ 1901  git status
+ 1902  ls
+ 1903  git status
+ 1904  git push github
+ 1905  cp ../../tinyscheme/tinyscheme-1.41/hackscheme.scm .
+ 1906  cp ../../tinyscheme/tinyscheme-1.41/test.scm .
+ 1907  ls
+ 1908  cat .gitignore 
+ 1909  ls
+ 1910  make
+ 1911  ls
+ 1912  ./scheme test.scm 
+ 1913  cp ../../tinyscheme/tinyscheme-1.41/scheme.c .
+ 1914  make
+ 1915  ./scheme test.scm 
+ 1916  git status
+ 1917  ls
+ 1918  mkdir testcases
+ 1919  mv testcase-ideas
+ 1920  mv testcases  testcases_ideas
+ 1921  mv test.scm testcases_ideas 
+ 1922  ls
+ 1923  git add testcases_ideas/
+ 1924  git status
+ 1925  echo "scheme" >> .gitignore 
+ 1926  git status
+ 1927  cat hackscheme.scm 
+ 1928  emacs notes.org &
+ 1929  ls
+ 1930  ls ..
+ 1931  cp ../tsx-1.1.tgz .
+ 1932  ls
+ 1933  tar -xzvf tsx-1.1.tgz 
+ 1934  ls
+ 1935  cd tsx-1.1/
+ 1936  ls
+ 1937  cat LICENSE 
+ 1938  ls
+ 1939  make
+ 1940  ls
+ 1941  echo $LD_LIBRARY_PATH
+ 1942  git status
+ 1943  git add .
+ 1944  git status
+ 1945  git commit -m "added examples of how to extend it from http://heras-gilsanz.com/manuel/tsx.html"
+ 1946  git push github
+ 1947  ls
+ 1948  cd ..
+ 1949  ls
+ 1950  ./scheme wsdl/runsdl.scm 
+ 1951  cd wsdl/
+ 1952  ls
+ 1953  cd sdl-1.2/
+ 1954  s
+ 1955  ks
+ 1956  ls
+ 1957  cd lib/
+ 1958  ls
+ 1959  export LD_LIBRARY_PATH=$(pwd)
+ 1960  cd ..
+ 1961  ls
+ 1962  cd ..
+ 1963  ./scheme wsdl/runsdl.scm 
+ 1964  ls
+ 1965  cd wsdl/
+ 1966  ls
+ 1967  rm *~
+ 1968  ls
+ 1969  cd wsdl
+ 1970  ./scheme wsdl/runsdl.scm 
+ 1971  cd ..
+ 1972  ./scheme wsdl/runsdl.scm 
+ 1973  ls /usr/lib/x86_64-linux-gnu 
+ 1974  ls /usr/lib/x86_64-linux-gnu/libsd*
+ 1975  ls /usr/include/SDL 
+ 1976  grep "SDL_Init  /usr/include/SDL  
+ 1977  grep "SDL_Init"  /usr/include/SDL  
+ 1978  sudo apt-get install libsdl1.2
+ 1979  sudo apt-get install libsdl
+ 1980  sudo apt-get install sdl
+ 1981  ls
+ 1982  sudo apt-get remove sdl
+ 1983  ls
+ 1984  cd wsdl/
+ 1985  ls
+ 1986  tar -xzvf SDL-1.2.15.tar.gz 
+ 1987  ls
+ 1988  cd SDL-1.2.15/
+ 1989  ls
+ 1990  ./configure --help
+ 1991  ls
+ 1992  ./configure --prefix=/home/stephan/sdl1.2 --enable-shared=no --enable-static=yes
+ 1993  exit
+ 1994  cd tinyscheme-1.41/
+ 1995  ls
+ 1996  cd ..
+ 1997  ls
+ 1998  cd .
+ 1999  cd ..
+ 2000  cd tinyscheme_orig/
+ 2001  ls
+ 2002  cd tinyscheme-1.41/
+ 2003  ls
+ 2004  cd wsdl/
+ 2005  ls
+ 2006  ls ~/sdl1.2/
+ 2007  ls
+ 2008  cd SDL-1.2.15/
+ 2009  make install
+ 2010  ls ~/sdl1.2 
+ 2011  ls ~/sdl1.2/bin/sdl-config 
+ 2012  ls ~/sdl1.2/bin/sdl-config  ==cflags
+ 2013  ls ~/sdl1.2/bin/sdl-config  --cflags
+ 2014  ls ~/sdl1.2/bin/sdl-config  ==cflags
+ 2015  ls ~/sdl1.2/bin/sdl-config  --cflags
+ 2016  ls ~/sdl1.2/bin/sdl-config  --libs
+ 2017  ls ~/sdl1.2/bin/sdl-config  --
+ 2018  ~/sdl1.2/bin/sdl-config 
+ 2019  ~/sdl1.2/bin/sdl-config  --cflags
+ 2020  ~/sdl1.2/bin/sdl-config  --cflags --libs
+ 2021  gcc -c test.c $(~/sdl1.2/bin/sdl-config  --cflags --libs) -o test
+ 2022  ls
+ 2023  cd ..
+ 2024  ls
+ 2025  gcc -c test.c $(~/sdl1.2/bin/sdl-config  --cflags --libs) -o test
+ 2026  ls
+ 2027  ./test
+ 2028  gcc  test.c $(~/sdl1.2/bin/sdl-config  --cflags --libs) -o test
+ 2029  ls
+ 2030  ./test 
+ 2031  history > thisworked.txt
